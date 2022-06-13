@@ -1,0 +1,32 @@
+body{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+h1{
+    color: rgb(0, 195, 255);
+}
+
+#status{
+    text-underline-offset: none;
+    color: rgb(2, 241, 229);
+    background-color: rgb(222, 15, 241);
+    margin-inline: 550px;
+    font-family: cursive;
+}
+
+#label:hover{
+    cursor: default;
+}
+
+canvas{
+    border-width: 2px;
+    border-style: groove;
+    border-color: #FF6400;
+    margin-top: 140px;
+    
+}
+
+#label:hover, #status:hover{
+    cursor: pointer;
+}
