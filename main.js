@@ -16,12 +16,27 @@ function setup(){
     video.hide();
     video.size(400,400);
 
-}
-
-function startDetect(){
     object_detection = ml5.objectDetector("cocossd",cocossd_loaded);
 
-    document.getElementById("status").innerHTML = "Trying to detect objects in image."
+    document.getElementById("status").innerHTML = "Trying to detect objects in image.";
+}
+
+function cocossd_loaded(){
+    console.log("cocossd loaded");
+
+    person = true;
+
+}
+
+function detected(error,results){
+    if(error){
+        console.error(error);
+    }
+    else{
+        console.log(results);
+
+        objects = results;
+    }
 }
 
 function draw(){
@@ -57,24 +72,6 @@ function draw(){
         document.getElementById("status").innerHTML = "baby has not been detected";
 
         alarm.play();
-    }
+    }    
 
-}
-
-function cocossd_loaded(){
-    console.log("cocossd loaded");
-
-    person = true;
-
-}
-
-function detected(error,result){
-    if(error){
-        console.error(error);
-    }
-    else{
-        console.log(result);
-
-        objects = result;
-    }
 }
